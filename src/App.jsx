@@ -2,10 +2,11 @@ import second from "./assets/images/illustration-editor-mobile.svg";
 import phones from "./assets/images/illustration-phones.svg";
 import laptop from "./assets/images/illustration-laptop-mobile.svg";
 import logo from "./assets/images/logo.svg";
+import arrowL from "./assets/images/icon-arrow-light.svg";
 
 function App() {
   return (
-    <div className="flex flex-col gap-9 items-center justify-center">
+    <div className="flex flex-col gap-9">
       <First />
       <Second />
       <Third />
@@ -21,7 +22,7 @@ function First() {
   return (
     <div className="flex items-center justify-center">
       <div
-        className="relative w-full max-w-[380px] h-[600px] py-9 px-4 overflow-hidden text-white p-8
+        className="relative w-full max-w-[380px] md:max-w-[768px] lg:max-w-[1440px] h-[600px] mx-auto overflow-hidden text-white py-9 px-4 md:px-10 lg:px-40
       bg-gradient-to-br from-[#ff7e5f] via-[#ff6a6a] to-[#ff3d6b] rounded-bl-[100px]"
       >
         <div className="absolute w-[300px] h-[300px] bg-white/10 rounded-full top-[-80px] right-[-80px]"></div>
@@ -31,11 +32,31 @@ function First() {
         <div className="relative z-10 flex flex-col justify-between h-full">
           <div className="flex justify-between items-center">
             <img src={logo} alt="logo" />
-            <div className="flex flex-col gap-1">
+            <div className="hidden lg:flex flex-1 justify-between items-center px-10">
+              <div className="flex justify-start gap-3">
+                <span className="flex items-center gap-2">
+                  <p>Produc</p>
+                  <img src={arrowL} alt="arrow" />
+                </span>
+                <span className="flex items-center gap-2">
+                  <p>Company</p>
+                  <img src={arrowL} alt="arrow" />
+                </span>
+                <span className="flex items-center gap-2">
+                  <p>Connect</p>
+                  <img src={arrowL} alt="arrow" />
+                </span>
+              </div>
+              <p>Login</p>
+            </div>
+            <div className="flex flex-col gap-1 lg:hidden">
               <span className="w-6 h-[4px] bg-white"></span>
               <span className="w-6 h-[4px] bg-white"></span>
               <span className="w-6 h-[4px] bg-white"></span>
             </div>
+            <button className="hidden lg:block px-6 py-2 bg-white text-[#ff3d6b] rounded-full font-semibold">
+              Sign Up
+            </button>
           </div>
 
           <div className="flex flex-col items-center text-center gap-6">
@@ -66,14 +87,14 @@ function First() {
 
 function Second() {
   return (
-    <div className="flex flex-col gap-9 w-full max-w-[326px] h-[1080px] items-center">
+    <div className="flex flex-col gap-9 w-full max-w-[326px] md:max-w-[688px] h-[1080px] md:max-h-[1215px] mx-auto items-center">
       <p className=" text-[24px] text-blue-800 font-semibold ">
         Designed for the future
       </p>
 
       <img className="w-full h-[326px] object-cover" src={second} alt="illus" />
 
-      <div className="flex flex-col w-[318px] h-[620px] gap-9">
+      <div className="flex flex-col w-[318px] md:w-[540px] h-[620px] md:h-[444px] gap-9">
         <div className="flex flex-col items-center text-center gap-4 flex-1">
           <h2 className="text-[28px] leading-none text-blue-500 font-semibold">
             Introducing an extensible editor
@@ -105,9 +126,9 @@ function Second() {
 
 function Third() {
   return (
-    <div className="relative flex flex-col items-center w-full max-w-[375px] h-[798px] border border-black overflow-hidden">
+    <div className="relative flex flex-col items-center w-full max-w-[375px] md:max-w-[768px] h-[798px] md:max-h-[636px] mx-auto overflow-hidden">
       <div
-        className="absolute bottom-0 left-0 w-full max-w-[375px] h-[625px] text-white p-8
+        className="absolute bottom-0 left-0 w-full max-w-[375px] md:max-w-[768px]  h-[625px] md:h-[474px] text-white p-8
       bg-gradient-to-br from-[#18024b] via-[#0f0130] to-[#0d0124] rounded-bl-[100px] rounded-tr-[100px] overflow-hidden z-0"
       >
         <div className="absolute w-[300px] h-[300px] bg-white/10 rounded-full top-[-80px] right-[-80px]"></div>
@@ -115,7 +136,11 @@ function Third() {
         <div className="absolute w-[200px] h-[200px] bg-white/5 rounded-full bottom-[100px] right-[-50px]"></div>
       </div>
       <div className="relative z-10 bg-transparent flex flex-col items-center mx-6 gap-12">
-        <img src={phones} alt="phones" />
+        <img
+          className="w-full max-w-[327px] md:max-w-[346px]"
+          src={phones}
+          alt="phones"
+        />
         <div className="flex flex-col items-center text-center gap-8">
           <h2 className="text-[28px] leading-relaxed text-white font-semibold">
             State of the Art Infrastructure
@@ -134,9 +159,9 @@ function Third() {
 
 function Fourth() {
   return (
-    <div className="flex flex-col items-center w-full justify-between max-w-[375px] h-[918px] ">
+    <div className="flex flex-col items-center w-full justify-between max-w-[375px] md:max-w-[699px] h-[918px] md:h-[1137px] mx-auto">
       <img
-        className="w-full scale-110 h-[326px] object-cover"
+        className="w-full scale-110 h-[326px] object-cover md:scale-100 md:w-[699px] md:h-[699px]"
         src={laptop}
         alt="laptop"
       />
@@ -169,9 +194,9 @@ function Fourth() {
 
 function Fifth() {
   return (
-    <div className="flex flex-col w-full max-w-[380px] py-16 items-center h-[900px] bg-slate-900 rounded-tr-[100px]">
-      <img className="w-[100px] h-[33px] mb-12" src={logo} alt="logo" />
-      <div className="flex flex-col items-center h-full justify-between">
+    <div className="flex flex-col w-full max-w-[380px] md:max-w-[768px] py-16 items-center h-[900px] md:h-[359px]  bg-slate-900 rounded-tr-[100px] mx-auto">
+      <div className="flex flex-col items-center h-full justify-between md:w-[687px] md:h-[215px] md:flex-row mx-auto md:items-start">
+        <img className="w-[100px] h-[33px] mb-12" src={logo} alt="logo" />
         <div className=" flex flex-col items-center gap-4">
           <h4 className="text-[20px] leading-none text-white font-bold">
             Product
